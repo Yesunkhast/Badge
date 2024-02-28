@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "190236807348",
+    "project_id": "limebadge",
+    "storage_bucket": "limebadge.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:190236807348:android:353f13be993b5a096647e1",
+        "android_client_info": {
+          "package_name": "com.google.firebase.present.demo"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA3sVXLZuP63pOFxe7FESvoce8K4mV5BDU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
