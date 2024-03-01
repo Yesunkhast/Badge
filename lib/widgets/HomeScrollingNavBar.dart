@@ -51,7 +51,7 @@ class ScrollBar extends StatelessWidget {
               height: 40,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color(0xffD0FF14),
+                  backgroundColor: Color.fromARGB(255, 220, 255, 81),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
                   ),

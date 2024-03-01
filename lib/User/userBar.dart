@@ -2,7 +2,9 @@ import 'package:demo/widgets/home.dart';
 import 'package:flutter/material.dart';
 
 class UserBar extends StatelessWidget implements PreferredSizeWidget {
-  const UserBar({super.key});
+  final ner;
+
+  const UserBar({required this.ner});
 
   @override
   Widget build(BuildContext context) {
@@ -11,8 +13,8 @@ class UserBar extends StatelessWidget implements PreferredSizeWidget {
         borderRadius: BorderRadius.circular(9),
       ),
       backgroundColor: Color(0xff17181c),
-      title: const Text(
-        'Хэрэглэгч',
+      title: Text(
+        ner,
         style: TextStyle(color: Colors.white, fontSize: 18.0),
       ),
       actions: [
