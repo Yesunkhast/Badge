@@ -1,13 +1,17 @@
-import 'package:flutter/material.dart';
+class ChallangeBadge {
+  // String ID;
+  String name;
+  String caption;
+  String type;
+  int level;
+  // int levelComplate;
 
-class Card {
-  late String name;
-  late String caption;
-  late int level;
-
-  Card({
+  ChallangeBadge({
+    // required this.ID,
     required this.name,
     required this.caption,
     required this.level,
+    required this.type,
+    // required this.levelComplate,
   });
 }

@@ -1,14 +1,18 @@
+import 'package:demo/Badge/BadgeClass.dart';
 import 'package:demo/Badge/BadgeHome.dart';
 import 'package:flutter/material.dart';
 
-class Badge extends StatelessWidget {
-  const Badge({super.key});
+class BadgeCard extends StatelessWidget {
+  final ChallangeBadge badge;
+
+  const BadgeCard({
+    required this.badge,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
-      width: 100,
+      padding: EdgeInsets.all(5),
       margin: EdgeInsets.fromLTRB(0, 2, 0, 0),
       child: Column(
         children: [
@@ -37,7 +41,7 @@ class Badge extends StatelessWidget {
               Positioned(
                 bottom: 7,
                 child: Text(
-                  "Badge's",
+                  badge.name,
                   style: TextStyle(fontSize: 10.0),
                 ),
               ),

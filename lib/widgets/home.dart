@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'HomeBar.dart';
 import './BottomBar.dart';
 import 'HomeScrollingNavBar.dart';
-// import 'package:intl/intl.dart';
 
 // ignore: must_be_immutable
 class Home extends StatelessWidget {
