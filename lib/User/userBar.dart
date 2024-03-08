@@ -19,6 +19,7 @@ class UserBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       actions: [
         Container(
+          margin: EdgeInsets.fromLTRB(0, 0, 10, 0),
           child: SizedBox(
             width: 130,
             height: 30,

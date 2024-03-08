@@ -1,6 +1,8 @@
-import 'package:demo/Badge/Badge.dart';
+import 'package:demo/Badge/BadgeCard.dart';
 import 'package:demo/User/userBar.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../service/BadgeRepository.dart';
 import 'BadgeClass.dart';
 
 class BadgeHome extends StatefulWidget {
@@ -39,174 +41,59 @@ class _BadgeHomeState extends State<BadgeHome> {
     ChallangeBadge(
         name: "Badge6", caption: "2-р түвшин", type: "type2", level: 6),
     ChallangeBadge(
-        name: "Badge7", caption: "2-р түвшин", type: "type2", level: 7),
+        name: "Badge7", caption: "2-р түвшин", type: "type3", level: 7),
   ];
   static const String title = "Bagde's";
-  static const List<String> _BadgeType = [
-    "Type1",
-    "Type2",
-    "Type3",
-    "Type4",
-    "Type5",
-    "Type6",
-    "Type7",
-    "Type8",
-    "Type9",
-    "Type10"
-  ];
+  // static const List<String> _BadgeType = [
+  //   "type1",
+  //   "type2",
+  //   "type3",
+  //   "type4",
+  //   "type5",
+  //   "type6",
+  //   "type7",
+  //   "type8",
+  //   "type9",
+  //   "type10"
+  // ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: UserBar(ner: title),
-        body: SingleChildScrollView(
-          scrollDirection: Axis.vertical,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Container(
-                child: Text(_BadgeType[0]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                height: 115,
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[1]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[2]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[3]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[4]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[5]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[6]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[7]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[8]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              ),
-              Container(
-                child: Text(_BadgeType[9]),
-                padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
-              ),
-              Container(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
-                child: SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                      children:
-                          badges.map((e) => BadgeCard(badge: e)).toList()),
-                ),
-              )
-            ],
-          ),
-        ));
+      appBar: UserBar(ner: title),
+      body: SingleChildScrollView(
+        scrollDirection: Axis.vertical,
+        // Column(
+        //     // crossAxisAlignment: CrossAxisAlignment.start,
+        //     // children: _BadgeType.map((el) {
+        //     //   return Column(
+        //     //     crossAxisAlignment: CrossAxisAlignment.start,
+        //     //     children: [
+        //     //       Container(
+        //     //         child: Text(el),
+        //     //         padding: EdgeInsets.fromLTRB(20, 20, 0, 0),
+        //     //       ),
+        //     //       Container(
+        //     //         height: 115,
+        //     //         padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+        //     //         child: SingleChildScrollView(
+        //     //           scrollDirection: Axis.horizontal,
+        //     //           child: Row(
+        //     //             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        //     //             children: badges
+        //     //                 .where((badge) => badge.type == el)
+        //     //                 .map((badge) => BadgeCard(badge: badge))
+        //     //                 .toList(),
+        //     //           ),
+        //     //         ),
+        //     //       ),
+        //     //     ],
+        //     //   );
+        //     // }).toList(),
+        //     ),
+
+        child: ProductList(),
+      ),
+    );
   }
 }

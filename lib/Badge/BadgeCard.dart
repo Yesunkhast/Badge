@@ -21,10 +21,10 @@ class BadgeCard extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => BadgeHome()),
-                  );
+                  // Navigator.push(
+                  //   context,
+                  //   MaterialPageRoute(builder: (context) => BadgeHome()),
+                  // );
                 },
                 child: Image.asset(
                   'assets/img/medal.png',
@@ -34,7 +34,9 @@ class BadgeCard extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
                   // backgroundColor:  Color.fromARGB(255, 222, 222, 222),
-                  backgroundColor: Color.fromARGB(255, 220, 255, 81),
+                  backgroundColor: badge.level > 0
+                      ? Color.fromARGB(255, 220, 255, 81)
+                      : const Color.fromARGB(255, 227, 227, 227),
                   padding: EdgeInsets.all(20),
                 ),
               ),
