@@ -2,8 +2,6 @@ import 'package:demo/Badge/BadgeHome.dart';
 import 'package:flutter/material.dart';
 
 class ProfileBadge extends StatefulWidget {
-  const ProfileBadge({super.key});
-
   @override
   State<ProfileBadge> createState() => _ProfileBadgeState();
 }

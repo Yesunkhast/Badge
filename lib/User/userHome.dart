@@ -1,11 +1,21 @@
+// import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:demo/Badge/BadgeClass.dart';
 import 'package:demo/Badge/UserProfileBadge.dart';
 import 'package:demo/User/userBar.dart';
+import 'package:demo/dialog/badgeDialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
+import '../server/getData.dart';
 
-class UserHome extends StatelessWidget {
+class UserHome extends StatefulWidget {
   const UserHome({Key? key}) : super(key: key);
+
+  @override
+  State<UserHome> createState() => _UserHomeState();
+}
+
+class _UserHomeState extends State<UserHome> {
   final String title = "Хэрэглэгч";
 
   @override
@@ -150,7 +160,18 @@ class UserHome extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {
-                        print("Түвшин ахих");
+                        ChallangeBadge badge = ChallangeBadge(
+                            ID: "100",
+                            name: "Top user",
+                            caption: "шилдэг нь",
+                            level: 10,
+                            type: "type1",
+                            levelFill: 100,
+                            isShowed: true);
+                        showDialog(
+                            context: context,
+                            builder: (context) =>
+                                InformationBadgeRecive(badge: badge));
                       },
                       child: Text(
                         "Түвшин ахих",
@@ -172,7 +193,10 @@ class UserHome extends StatelessWidget {
                 height: 40,
                 child: ElevatedButton(
                   onPressed: () {
-                    print("Elevated button");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return MyApp();
+                    }));
                   },
                   child: Row(
                     children: [

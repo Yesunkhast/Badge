@@ -7,17 +7,12 @@ import 'HomeScrollingNavBar.dart';
 class Home extends StatelessWidget {
   Home({super.key});
 
-  Map data = {};
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 230, 228, 228),
-      appBar: ContainerAppBar(
-        key: Key("123"),
-      ),
+      appBar: ContainerAppBar(),
       body: Padding(
-        // padding: EdgeInsets.fromLTRB(20.0, 0.0, 20.0, 20.0),
         padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
         child: SingleChildScrollView(
           child: Column(
@@ -43,6 +38,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -50,16 +46,8 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
+                        child: Image.asset(
+                          "assets/home/1.jpg",
                         ),
                       ),
                     ),
@@ -71,6 +59,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -78,17 +67,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/2.jpg"),
                       ),
                     ),
                   ),
@@ -104,6 +83,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -111,17 +91,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/3.jpg"),
                       ),
                     ),
                   ),
@@ -132,6 +102,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -139,17 +110,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/4.jpg"),
                       ),
                     ),
                   ),
@@ -162,6 +123,7 @@ class Home extends StatelessWidget {
                   height: 130,
                   child: ElevatedButton(
                     style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.black87,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(9),
                       ),
@@ -169,18 +131,7 @@ class Home extends StatelessWidget {
                     onPressed: () {
                       print("Elevated button");
                     },
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        // Image.asset(""),
-                        Icon(Icons.image),
-                        SizedBox(width: 8),
-                        Text(
-                          "Button 2",
-                          style: TextStyle(color: Colors.black),
-                        ),
-                      ],
-                    ),
+                    child: Image.asset("assets/home/5.jpg"),
                   ),
                 ),
               ),
@@ -194,6 +145,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -201,17 +153,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/6.jpg"),
                       ),
                     ),
                   ),
@@ -222,6 +164,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -229,17 +172,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/7.jpg"),
                       ),
                     ),
                   ),
@@ -255,6 +188,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -262,17 +196,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/8.jpg"),
                       ),
                     ),
                   ),
@@ -283,6 +207,7 @@ class Home extends StatelessWidget {
                       height: 130,
                       child: ElevatedButton(
                         style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(9),
                           ),
@@ -290,17 +215,7 @@ class Home extends StatelessWidget {
                         onPressed: () {
                           print("Elevated button");
                         },
-                        child: Row(
-                          children: [
-                            // Image.asset(""),
-                            Icon(Icons.image),
-                            SizedBox(width: 8),
-                            Text(
-                              "Button 2",
-                              style: TextStyle(color: Colors.black),
-                            ),
-                          ],
-                        ),
+                        child: Image.asset("assets/home/9.jpg"),
                       ),
                     ),
                   ),

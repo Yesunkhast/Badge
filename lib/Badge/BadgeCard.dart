@@ -1,11 +1,11 @@
 import 'package:demo/Badge/BadgeClass.dart';
-import 'package:demo/Badge/BadgeHome.dart';
 import 'package:flutter/material.dart';
+import '../dialog/badgeDialog.dart';
 
 class BadgeCard extends StatelessWidget {
   final ChallangeBadge badge;
 
-  const BadgeCard({
+  BadgeCard({
     required this.badge,
   });
 
@@ -21,10 +21,11 @@ class BadgeCard extends StatelessWidget {
             children: [
               ElevatedButton(
                 onPressed: () {
-                  // Navigator.push(
-                  //   context,
-                  //   MaterialPageRoute(builder: (context) => BadgeHome()),
-                  // );
+                  // print("badge: $badge");
+                  showDialog(
+                      context: context,
+                      builder: (context) =>
+                          InformationBadgeRecive(badge: badge));
                 },
                 child: Image.asset(
                   'assets/img/medal.png',
@@ -33,22 +34,21 @@ class BadgeCard extends StatelessWidget {
                 ),
                 style: ElevatedButton.styleFrom(
                   shape: CircleBorder(),
-                  // backgroundColor:  Color.fromARGB(255, 222, 222, 222),
                   backgroundColor: badge.level > 0
                       ? Color.fromARGB(255, 220, 255, 81)
-                      : const Color.fromARGB(255, 227, 227, 227),
+                      : Color.fromARGB(255, 227, 227, 227),
                   padding: EdgeInsets.all(20),
                 ),
               ),
-              Positioned(
-                bottom: 7,
-                child: Text(
-                  badge.name,
-                  style: TextStyle(fontSize: 10.0),
-                ),
-              ),
             ],
-          )
+          ),
+          Positioned(
+            bottom: 7,
+            child: Text(
+              badge.name,
+              style: TextStyle(fontSize: 10.0),
+            ),
+          ),
         ],
       ),
     );

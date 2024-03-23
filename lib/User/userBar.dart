@@ -31,7 +31,6 @@ class UserBar extends StatelessWidget implements PreferredSizeWidget {
                 ),
               ),
               onPressed: () {
-                // print("Elevated button");
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
                   return Home();
                 }));
@@ -39,10 +38,6 @@ class UserBar extends StatelessWidget implements PreferredSizeWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  // Image.asset(
-                  //   "assets/img/littlestar.jpg",
-                  //   fit: BoxFit.contain,
-                  // ),
                   Icon(Icons.money_off_rounded,
                       color: Color.fromARGB(255, 255, 227, 16)),
                   Text(

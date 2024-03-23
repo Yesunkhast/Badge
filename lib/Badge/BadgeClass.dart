@@ -1,17 +1,19 @@
 class ChallangeBadge {
-  // String ID;
+  String ID;
   String name;
   String caption;
   String type;
   int level;
-  // int levelComplate;
+  int levelFill;
+  bool isShowed;
 
   ChallangeBadge({
-    // required this.ID,
+    required this.ID,
     required this.name,
     required this.caption,
     required this.level,
     required this.type,
-    // required this.levelComplate,
+    required this.levelFill,
+    required this.isShowed,
   });
 }
