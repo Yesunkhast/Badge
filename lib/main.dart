@@ -2,16 +2,14 @@ import 'package:demo/widgets/Splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
-// import 'widgets/home.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
 
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-
-  WidgetsFlutterBinding.ensureInitialized();
   // await Firebase.initializeApp();
   runApp(const LimeApp());
 }
@@ -21,7 +19,7 @@ class LimeApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       home: SpScreen(),
     );

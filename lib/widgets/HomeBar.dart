@@ -1,11 +1,29 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 import '../User/userHome.dart';
 import 'package:flutter/material.dart';
 
 // ignore: must_be_immutable
 class ContainerAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
-  final Size preferredSize = Size.fromHeight(56);
-  List<String> _time = ["Өглөөний", "Өдрийн", "Оройн"];
+  late final int counter;
+  final Size preferredSize = const Size.fromHeight(56);
+  final List<String> _time = ["Өглөөний", "Өдрийн", "Оройн"];
+
+  final FirebaseFirestore _firestore = FirebaseFirestore.instance;
+  Future<int> Counter() async {
+    try {
+      counter = _firestore
+          .collection("Badges")
+          .where("isShowed", isEqualTo: true)
+          .count()
+          .get() as int;
+      print('Data readed successfully');
+    } catch (e) {
+      print('Error reading data: ${e.toString()}');
+    }
+    return counter;
+  }
 
   @override
   Widget build(BuildContext context) {

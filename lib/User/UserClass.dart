@@ -1,4 +1,7 @@
+// ignore_for_file: file_names
+
 class User {
+  // ignore: non_constant_identifier_names
   String ID;
   String name;
   int phoneNumber;
@@ -6,6 +9,7 @@ class User {
   List<int> owned;
 
   User({
+    // ignore: non_constant_identifier_names
     required this.ID,
     required this.name,
     required this.phoneNumber,

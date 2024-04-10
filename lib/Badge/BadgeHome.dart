@@ -116,13 +116,15 @@
 // }
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import '../User/userBar.dart';
+import '../User/UserBar.dart';
 // Ensure this import is uncommented if you're using anything from it
 // import '../dialog/badgeDialog.dart';
 import 'BadgeClass.dart';
 import 'BadgeCard.dart';
 
 class BadgeHome extends StatefulWidget {
+  const BadgeHome({super.key});
+
   @override
   State<BadgeHome> createState() => _BadgeHomeState();
 }
@@ -142,33 +144,37 @@ class _BadgeHomeState extends State<BadgeHome> {
     "type10"
   ];
 
-  late Stream<QuerySnapshot> _badgeStream;
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   // _getBadgeStream();
+  // }
 
-  @override
-  void initState() {
-    super.initState();
-    _getBadgeStream();
-  }
+  // _getBadgeStream() async {
+  //   //  final res = await badgesCollection.get();
+  //   // final CollectionReference badgesCollection = FirebaseFirestore.instance
+  //   //     .collection('Badge'); // Corrected collection name
+  //   // setState(() {
+  //   //   _badgeStream = badgesCollection.snapshots();
+  //   // });
+  //   //return res;
+  // }
 
-  _getBadgeStream() {
-    final CollectionReference badgesCollection = FirebaseFirestore.instance
-        .collection('Badge'); // Corrected collection name
-    setState(() {
-      _badgeStream = badgesCollection.snapshots();
-    });
-  }
-
-  Widget _buildBadgeList(QuerySnapshot snapshot, String type) {
-    final badges = snapshot.docs
-        .map((doc) => ChallangeBadge(
-              ID: doc["ID"],
-              name: doc['name'],
-              caption: doc['caption'],
-              type: doc['type'],
-              level: doc['level'],
-              levelFill: doc["levelFill"],
-              isShowed: doc["isShowed"],
-            ))
+  Widget _buildBadgeList(QuerySnapshot snapshots, String type) {
+    //final snapshots = await _getBadgeStream();
+    final badges = snapshots.docs
+        .map((doc) {
+          print('badge: ${doc.data().toString()}');
+          return ChallangeBadge(
+            ID: doc["ID"],
+            name: doc['name'],
+            caption: doc['caption'],
+            type: doc['type'],
+            level: doc['level'],
+            levelFill: doc["levelFill"],
+            isShowed: doc["isShowed"],
+          );
+        })
         .where((badge) => badge.type == type)
         .toList();
 
@@ -187,8 +193,10 @@ class _BadgeHomeState extends State<BadgeHome> {
 
   @override
   Widget build(BuildContext context) {
+    final Stream<QuerySnapshot> badgeStream =
+        FirebaseFirestore.instance.collection('Badges').snapshots();
     return Scaffold(
-      appBar: UserBar(ner: title),
+      appBar: const UserBar(ner: title),
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: Column(
@@ -205,14 +213,14 @@ class _BadgeHomeState extends State<BadgeHome> {
                   height: 150,
                   padding: const EdgeInsets.fromLTRB(10, 0, 0, 0),
                   child: StreamBuilder<QuerySnapshot>(
-                    stream: _badgeStream,
+                    stream: badgeStream,
                     builder: (context, snapshot) {
                       if (snapshot.connectionState == ConnectionState.waiting) {
                         return const Center(child: CircularProgressIndicator());
                       } else if (snapshot.hasError) {
-                        return Text('Something went wrong');
-                      }
-                      return _buildBadgeList(snapshot.data!, type);
+                        return const Text('Something went wrong');
+                      } else
+                        return _buildBadgeList(snapshot.data!, type);
                     },
                   ),
                 ),

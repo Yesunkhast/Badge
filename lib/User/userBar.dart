@@ -1,10 +1,11 @@
-import 'package:demo/widgets/home.dart';
+import 'package:demo/widgets/Home.dart';
 import 'package:flutter/material.dart';
 
 class UserBar extends StatelessWidget implements PreferredSizeWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final ner;
 
-  const UserBar({required this.ner});
+  const UserBar({super.key, required this.ner});
 
   @override
   Widget build(BuildContext context) {
@@ -12,30 +13,30 @@ class UserBar extends StatelessWidget implements PreferredSizeWidget {
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(9),
       ),
-      backgroundColor: Color(0xff17181c),
+      backgroundColor: const Color(0xff17181c),
       title: Text(
         ner,
-        style: TextStyle(color: Colors.white, fontSize: 18.0),
+        style: const TextStyle(color: Colors.white, fontSize: 18.0),
       ),
       actions: [
         Container(
-          margin: EdgeInsets.fromLTRB(0, 0, 10, 0),
+          margin: const EdgeInsets.fromLTRB(0, 0, 10, 0),
           child: SizedBox(
             width: 130,
             height: 30,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
-                backgroundColor: Color(0xff17181c),
+                backgroundColor: const Color(0xff17181c),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(9),
                 ),
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return Home();
+                  return const Home();
                 }));
               },
-              child: Row(
+              child: const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Icon(Icons.money_off_rounded,
@@ -53,5 +54,6 @@ class UserBar extends StatelessWidget implements PreferredSizeWidget {
     );
   }
 
-  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+  @override
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight);
 }

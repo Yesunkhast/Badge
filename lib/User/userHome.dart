@@ -1,12 +1,12 @@
-// import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:demo/Badge/BadgeClass.dart';
-import 'package:demo/Badge/UserProfileBadge.dart';
-import 'package:demo/User/userBar.dart';
-import 'package:demo/dialog/badgeDialog.dart';
+import 'package:demo/service/test.dart';
+
+import '../Badge/BadgeClass.dart';
+import '../User/UserProfileBadge.dart';
+import '../User/UserBar.dart';
+import '../dialog/badgeDialog.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'dart:math' as math;
-import '../server/getData.dart';
+import '../service/getData.dart';
 
 class UserHome extends StatefulWidget {
   const UserHome({Key? key}) : super(key: key);
@@ -36,7 +36,7 @@ class _UserHomeState extends State<UserHome> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Container(
-                    padding: EdgeInsets.fromLTRB(20, 20, 0, 10),
+                    padding: const EdgeInsets.fromLTRB(20, 20, 0, 10),
                     child: Row(
                       children: [
                         ClipRRect(
@@ -48,8 +48,8 @@ class _UserHomeState extends State<UserHome> {
                             width: 60.0,
                           ),
                         ),
-                        SizedBox(width: 16.0),
-                        Column(
+                        const SizedBox(width: 16.0),
+                        const Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             Text(
@@ -76,7 +76,7 @@ class _UserHomeState extends State<UserHome> {
                   ///
                   // Widget
                   ///
-                  SizedBox(
+                  const SizedBox(
                     width: 90,
                   ),
                   ProfileBadge(),
@@ -84,7 +84,7 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.all(20.0),
+              padding: const EdgeInsets.all(20.0),
               child: Column(
                 children: [
                   Row(
@@ -94,16 +94,16 @@ class _UserHomeState extends State<UserHome> {
                         Container(
                           height: 100.0,
                           width: 70.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color.fromARGB(255, 63, 237, 69),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5.0,
                         ),
-                        Text(
+                        const Text(
                           "Түвшин 1",
                           style: TextStyle(fontSize: 10.0),
                         ),
@@ -112,16 +112,16 @@ class _UserHomeState extends State<UserHome> {
                         Container(
                           height: 100.0,
                           width: 70.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color.fromARGB(255, 48, 164, 193),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5.0,
                         ),
-                        Text(
+                        const Text(
                           "Түвшин 2",
                           style: TextStyle(fontSize: 10.0),
                         ),
@@ -130,23 +130,23 @@ class _UserHomeState extends State<UserHome> {
                         Container(
                           height: 100.0,
                           width: 70.0,
-                          decoration: BoxDecoration(
+                          decoration: const BoxDecoration(
                             color: Color.fromARGB(255, 12, 120, 197),
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10.0)),
                           ),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5.0,
                         ),
-                        Text(
+                        const Text(
                           "Түвшин 3",
                           style: TextStyle(fontSize: 10.0),
                         ),
                       ])
                     ],
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
                   SizedBox(
@@ -154,7 +154,7 @@ class _UserHomeState extends State<UserHome> {
                     height: 40,
                     child: ElevatedButton(
                       style: ElevatedButton.styleFrom(
-                        backgroundColor: Color(0xff17181c),
+                        backgroundColor: const Color(0xff17181c),
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(9),
                         ),
@@ -167,13 +167,13 @@ class _UserHomeState extends State<UserHome> {
                             level: 10,
                             type: "type1",
                             levelFill: 100,
-                            isShowed: true);
+                            isShowed: false);
                         showDialog(
                             context: context,
                             builder: (context) =>
                                 InformationBadgeRecive(badge: badge));
                       },
-                      child: Text(
+                      child: const Text(
                         "Түвшин ахих",
                         style: TextStyle(color: Colors.white, fontSize: 10.0),
                       ),
@@ -183,11 +183,11 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 0, 0, 0),
-              child: Text("Мэдээлэл"),
+              padding: const EdgeInsets.fromLTRB(20, 0, 0, 0),
+              child: const Text("Мэдээлэл"),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: SizedBox(
                 width: 420,
                 height: 40,
@@ -201,20 +201,20 @@ class _UserHomeState extends State<UserHome> {
                   child: Row(
                     children: [
                       // Image.asset(""),
-                      Icon(
+                      const Icon(
                         Icons.supervised_user_circle,
                         color: Colors.black,
                       ),
-                      Text(
+                      const Text(
                         " Хувийн мэдээлэл",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 136.3),
+                      const SizedBox(width: 136.3),
                       Transform.rotate(
                         angle: math.pi,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          color: Color.fromRGBO(0, 0, 0, 1),
                         ),
                       )
                     ],
@@ -223,31 +223,34 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
               child: SizedBox(
                 width: 420,
                 height: 40,
                 child: ElevatedButton(
                   onPressed: () {
-                    print("Elevated button");
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) {
+                      return UpdateData();
+                    }));
                   },
                   child: Row(
                     children: [
                       // Image.asset(""),
-                      Icon(
+                      const Icon(
                         Icons.card_giftcard,
                         color: Colors.black,
                       ),
-                      Text(
+                      const Text(
                         " Төлбөрийн карт",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 145.0),
+                      const SizedBox(width: 145.0),
                       Transform.rotate(
                         angle: math.pi,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          color: Color.fromRGBO(0, 0, 0, 1),
                         ),
                       )
                     ],
@@ -256,35 +259,33 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 20.0, 0, 0),
-              child: Text("Тохиргоо"),
+              padding: const EdgeInsets.fromLTRB(20, 20.0, 0, 0),
+              child: const Text("Тохиргоо"),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: SizedBox(
                 width: 420,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print("Elevated button");
-                  },
+                  onPressed: () {},
                   child: Row(
                     children: [
                       // Image.asset(""),
-                      Icon(
+                      const Icon(
                         Icons.settings,
                         color: Colors.black,
                       ),
-                      Text(
+                      const Text(
                         " Систем тохиргоо",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 139),
+                      const SizedBox(width: 139),
                       Transform.rotate(
                         angle: math.pi,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          color: Color.fromRGBO(0, 0, 0, 1),
                         ),
                       )
                     ],
@@ -293,31 +294,29 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
               child: SizedBox(
                 width: 420,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print("Elevated button");
-                  },
+                  onPressed: () {},
                   child: Row(
                     children: [
                       // Image.asset(""),
-                      Icon(
+                      const Icon(
                         Icons.call,
                         color: Colors.black,
                       ),
-                      Text(
+                      const Text(
                         " Дуудлагын тохиргоо",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 115.6),
+                      const SizedBox(width: 115.6),
                       Transform.rotate(
                         angle: math.pi,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          color: Color.fromRGBO(0, 0, 0, 1),
                         ),
                       )
                     ],
@@ -326,35 +325,33 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 20.0, 0, 0),
-              child: Text("Бусад"),
+              padding: const EdgeInsets.fromLTRB(20, 20.0, 0, 0),
+              child: const Text("Бусад"),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 10),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
               child: SizedBox(
                 width: 420,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print("Elevated button");
-                  },
+                  onPressed: () {},
                   child: Row(
                     children: [
                       // Image.asset(""),
-                      Icon(
+                      const Icon(
                         Icons.question_mark_outlined,
                         color: Colors.black,
                       ),
-                      Text(
+                      const Text(
                         " Тусламж",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 190),
+                      const SizedBox(width: 190),
                       Transform.rotate(
                         angle: math.pi,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          color: Color.fromRGBO(0, 0, 0, 1),
                         ),
                       )
                     ],
@@ -363,15 +360,13 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
               child: SizedBox(
                 width: 420,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print("Elevated button");
-                  },
-                  child: Row(
+                  onPressed: () {},
+                  child: const Row(
                     children: [
                       // Image.asset(""),
                       Icon(
@@ -393,31 +388,29 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 10, 20, 5),
+              padding: const EdgeInsets.fromLTRB(20, 10, 20, 5),
               child: SizedBox(
                 width: 420,
                 height: 40,
                 child: ElevatedButton(
-                  onPressed: () {
-                    print("Elevated button");
-                  },
+                  onPressed: () {},
                   child: Row(
                     children: [
                       // Image.asset(""),
-                      Icon(
+                      const Icon(
                         Icons.ramp_left,
                         color: Colors.black,
                       ),
-                      Text(
+                      const Text(
                         " Гарах",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 215.0),
+                      const SizedBox(width: 215.0),
                       Transform.rotate(
                         angle: math.pi,
-                        child: Icon(
+                        child: const Icon(
                           Icons.arrow_back_ios,
-                          color: const Color.fromRGBO(0, 0, 0, 1),
+                          color: Color.fromRGBO(0, 0, 0, 1),
                         ),
                       )
                     ],
@@ -426,19 +419,19 @@ class _UserHomeState extends State<UserHome> {
               ),
             ),
             Container(
-              padding: EdgeInsets.fromLTRB(20, 20.0, 0, 0),
-              child: Text("Холбоо барих"),
+              padding: const EdgeInsets.fromLTRB(20, 20.0, 0, 0),
+              child: const Text("Холбоо барих"),
             ),
             Container(
-                padding: EdgeInsets.fromLTRB(0, 0, 0, 3),
+                padding: const EdgeInsets.fromLTRB(0, 0, 0, 3),
                 child: Image.asset(
                   "assets/nothing/zurg.jpg",
                   fit: BoxFit.cover,
                 )),
-            Center(
+            const Center(
               child: Text("Yesuu's version"),
             ),
-            SizedBox(
+            const SizedBox(
               height: 30.0,
             )
           ],

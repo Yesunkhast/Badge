@@ -7,9 +7,9 @@ class MyApp extends StatelessWidget {
     List<int> dataArray = [];
     QuerySnapshot<Map<String, dynamic>> querySnapshot =
         await FirebaseFirestore.instance.collection('User').get();
-    querySnapshot.docs.forEach((doc) {
+    for (var doc in querySnapshot.docs) {
       dataArray.addAll(List<int>.from(doc.data()['owned']));
-    });
+    }
     return dataArray;
   }
 
@@ -18,13 +18,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Firebase Array Example'),
+          title: const Text('Firebase Array Example'),
         ),
         body: FutureBuilder(
           future: fetchData(),
           builder: (context, AsyncSnapshot<List<int>> snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return Center(
+              return const Center(
                 child: CircularProgressIndicator(),
               );
             } else if (snapshot.hasError) {

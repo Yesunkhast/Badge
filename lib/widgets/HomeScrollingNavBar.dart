@@ -6,7 +6,7 @@ class ScrollBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         color: Color(0xff17181c),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(10),
@@ -14,7 +14,7 @@ class ScrollBar extends StatelessWidget {
         ),
       ),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(0, 0, 0, 20.0),
+        padding: const EdgeInsets.fromLTRB(0, 0, 0, 20.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
@@ -28,9 +28,7 @@ class ScrollBar extends StatelessWidget {
                     borderRadius: BorderRadius.circular(9),
                   ),
                 ),
-                onPressed: () {
-                  print("Elevated button");
-                },
+                onPressed: () {},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -38,7 +36,7 @@ class ScrollBar extends StatelessWidget {
                       "assets/img/littlestar.jpg",
                       fit: BoxFit.contain,
                     ),
-                    Text(
+                    const Text(
                       "Түвшин ахих",
                       style: TextStyle(color: Colors.black, fontSize: 10.0),
                     ),
@@ -51,14 +49,12 @@ class ScrollBar extends StatelessWidget {
               height: 40,
               child: ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  backgroundColor: Color.fromARGB(255, 220, 255, 81),
+                  backgroundColor: const Color.fromARGB(255, 220, 255, 81),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(9),
                   ),
                 ),
-                onPressed: () {
-                  print("Elevated button");
-                },
+                onPressed: () {},
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -66,7 +62,7 @@ class ScrollBar extends StatelessWidget {
                       "assets/img/lime.jpg",
                       fit: BoxFit.contain,
                     ),
-                    Text(
+                    const Text(
                       "Данс шалгах",
                       style: TextStyle(color: Colors.black, fontSize: 10.0),
                     ),

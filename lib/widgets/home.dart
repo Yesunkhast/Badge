@@ -1,231 +1,51 @@
+import 'Contact.dart';
+import 'HomeItems.dart';
+import 'Keypad.dart';
+import 'Message.dart';
 import 'package:flutter/material.dart';
-import 'HomeBar.dart';
-import './BottomBar.dart';
-import 'HomeScrollingNavBar.dart';
 
 // ignore: must_be_immutable
-class Home extends StatelessWidget {
-  Home({super.key});
+class Home extends StatefulWidget {
+  const Home({super.key});
+
+  @override
+  State<Home> createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int currentPageIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 230, 228, 228),
-      appBar: ContainerAppBar(),
-      body: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 0.0, 0.0, 0.0),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: <Widget>[
-              ScrollBar(),
-              Padding(
-                  padding: EdgeInsets.fromLTRB(30.0, 20.0, 0.0, 0.0),
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    child: Text(
-                      "Худалдаж авах",
-                      style: TextStyle(fontSize: 15.0),
-                    ),
-                  )),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset(
-                          "assets/home/1.jpg",
-                        ),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/2.jpg"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/3.jpg"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/4.jpg"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.all(10.0),
-                child: SizedBox(
-                  width: 330,
-                  height: 130,
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.black87,
-                      shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(9),
-                      ),
-                    ),
-                    onPressed: () {
-                      print("Elevated button");
-                    },
-                    child: Image.asset("assets/home/5.jpg"),
-                  ),
-                ),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/6.jpg"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/7.jpg"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/8.jpg"),
-                      ),
-                    ),
-                  ),
-                  Container(
-                    margin: EdgeInsets.all(10.0),
-                    child: SizedBox(
-                      width: 150,
-                      height: 130,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: Colors.white,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(9),
-                          ),
-                        ),
-                        onPressed: () {
-                          print("Elevated button");
-                        },
-                        child: Image.asset("assets/home/9.jpg"),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ],
+      backgroundColor: const Color.fromARGB(255, 230, 228, 228),
+      body: <Widget>[
+        const HomeItems(),
+        const PhoneKeypad(),
+        Message(),
+        Contact(),
+      ][currentPageIndex],
+      bottomNavigationBar: NavigationBar(
+        onDestinationSelected: (int index) {
+          setState(() {
+            currentPageIndex = index;
+          });
+        },
+        // indicatorColor: Colors.amber,
+        selectedIndex: currentPageIndex,
+        destinations: const <Widget>[
+          NavigationDestination(
+            icon: Icon(Icons.home),
+            label: 'Нүүр',
           ),
-        ),
+          NavigationDestination(icon: Icon(Icons.phone), label: 'Дуудлага'),
+          NavigationDestination(
+              icon: Icon(Icons.message_outlined), label: 'Мессеж'),
+          NavigationDestination(
+              icon: Icon(Icons.supervised_user_circle_outlined),
+              label: 'Хүмүүс')
+        ],
       ),
-      bottomNavigationBar: BotBar(),
     );
   }
 }

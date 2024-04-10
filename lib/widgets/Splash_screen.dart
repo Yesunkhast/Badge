@@ -1,6 +1,7 @@
-import '/widgets/home.dart';
+// ignore_for_file: use_build_context_synchronously
+
+import 'Home.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/services.dart';
 
 class SpScreen extends StatefulWidget {
   const SpScreen({super.key});
@@ -24,9 +25,9 @@ class _SpScreenState extends State<SpScreen>
   }
 
   _navigateHome() async {
-    await Future.delayed(Duration(seconds: 2), () {});
+    await Future.delayed(const Duration(seconds: 2), () {});
     Navigator.pushReplacement(
-        context, MaterialPageRoute(builder: (context) => Home()));
+        context, MaterialPageRoute(builder: (context) => const Home()));
   }
 
   @override
@@ -34,7 +35,7 @@ class _SpScreenState extends State<SpScreen>
     return Scaffold(
       body: Container(
         width: double.infinity,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           color: Colors.black,
         ),
         child: Center(
