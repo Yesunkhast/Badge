@@ -72,14 +72,9 @@ class _UserHomeState extends State<UserHome> {
                       ],
                     ),
                   ),
-
-                  ///
-                  // Widget
-                  ///
-                  const SizedBox(
-                    width: 90,
-                  ),
-                  ProfileBadge(),
+                  const Spacer(),
+                  const ProfileBadge(),
+                  const SizedBox(width: 10)
                 ],
               ),
             ),
@@ -209,7 +204,7 @@ class _UserHomeState extends State<UserHome> {
                         " Хувийн мэдээлэл",
                         style: TextStyle(color: Colors.black),
                       ),
-                      const SizedBox(width: 136.3),
+                      const Spacer(),
                       Transform.rotate(
                         angle: math.pi,
                         child: const Icon(
@@ -245,7 +240,7 @@ class _UserHomeState extends State<UserHome> {
                         " Төлбөрийн карт",
                         style: TextStyle(color: Colors.black),
                       ),
-                      const SizedBox(width: 145.0),
+                      const Spacer(),
                       Transform.rotate(
                         angle: math.pi,
                         child: const Icon(
@@ -280,7 +275,7 @@ class _UserHomeState extends State<UserHome> {
                         " Систем тохиргоо",
                         style: TextStyle(color: Colors.black),
                       ),
-                      const SizedBox(width: 139),
+                      const Spacer(),
                       Transform.rotate(
                         angle: math.pi,
                         child: const Icon(
@@ -311,7 +306,7 @@ class _UserHomeState extends State<UserHome> {
                         " Дуудлагын тохиргоо",
                         style: TextStyle(color: Colors.black),
                       ),
-                      const SizedBox(width: 115.6),
+                      const Spacer(),
                       Transform.rotate(
                         angle: math.pi,
                         child: const Icon(
@@ -346,7 +341,7 @@ class _UserHomeState extends State<UserHome> {
                         " Тусламж",
                         style: TextStyle(color: Colors.black),
                       ),
-                      const SizedBox(width: 190),
+                      const Spacer(),
                       Transform.rotate(
                         angle: math.pi,
                         child: const Icon(
@@ -377,7 +372,7 @@ class _UserHomeState extends State<UserHome> {
                         " Change language",
                         style: TextStyle(color: Colors.black),
                       ),
-                      SizedBox(width: 120),
+                      Spacer(),
                       Text(
                         "MN / EN",
                         style: TextStyle(fontSize: 10),
@@ -405,7 +400,7 @@ class _UserHomeState extends State<UserHome> {
                         " Гарах",
                         style: TextStyle(color: Colors.black),
                       ),
-                      const SizedBox(width: 215.0),
+                      const Spacer(),
                       Transform.rotate(
                         angle: math.pi,
                         child: const Icon(
