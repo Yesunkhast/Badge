@@ -26,6 +26,7 @@ class BadgeCard extends StatelessWidget {
     }
   }
 
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.all(5),
@@ -34,7 +35,7 @@ class BadgeCard extends StatelessWidget {
         children: [
           badges.Badge(
               // showBadge: badge.isShowed,
-              showBadge: badge.isShowed,
+              showBadge: badge.level > 0 ? badge.isShowed : false,
               child: Stack(
                 alignment: Alignment.center,
                 children: [
