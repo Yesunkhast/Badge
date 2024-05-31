@@ -9,9 +9,8 @@ class Message extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xff17181c),
         elevation: 0.0,
-        title: Text("${title}",
+        title: Text(title,
             style: const TextStyle(color: Colors.white, fontSize: 15)),
         actions: [
           IconButton(

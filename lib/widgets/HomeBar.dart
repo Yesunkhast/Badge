@@ -28,8 +28,6 @@ class ContainerAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     String time;
-    // 2024-03-09 17:54:14.14.635
-    // DateTime date = DateTime.parse("2024-03-09 19:54:14.635");
     DateTime date = DateTime.now();
     int hour = date.hour;
     if (hour > 6 && hour < 12) {
@@ -41,7 +39,7 @@ class ContainerAppBar extends StatelessWidget implements PreferredSizeWidget {
     }
 
     return AppBar(
-      backgroundColor: Color(0xff17181c),
+      backgroundColor: const Color(0xff17181c),
       elevation: 0.0,
       leading: IconButton(
         color: Colors.grey,
@@ -52,14 +50,14 @@ class ContainerAppBar extends StatelessWidget implements PreferredSizeWidget {
             MaterialPageRoute(builder: (context) => const UserHome()),
           );
         },
-        icon: Icon(Icons.supervised_user_circle),
+        icon: const Icon(Icons.supervised_user_circle),
       ),
-      title: Text("${time} мэнд",
-          style: TextStyle(color: Colors.white, fontSize: 15)),
+      title: Text("$time мэнд",
+          style: const TextStyle(color: Colors.white, fontSize: 15)),
       actions: [
         IconButton(
           onPressed: () {},
-          icon: Icon(Icons.notifications_active_rounded),
+          icon: const Icon(Icons.notifications_active_rounded),
         ),
       ],
     );

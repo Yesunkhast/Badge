@@ -21,9 +21,9 @@ class _HomeState extends State<Home> {
       backgroundColor: const Color.fromARGB(255, 230, 228, 228),
       body: <Widget>[
         const HomeItems(),
+        Contact(),
         const PhoneKeypad(),
         Message(),
-        Contact(),
       ][currentPageIndex],
       bottomNavigationBar: NavigationBar(
         onDestinationSelected: (int index) {
@@ -38,12 +38,11 @@ class _HomeState extends State<Home> {
             icon: Icon(Icons.home),
             label: 'Нүүр',
           ),
+          NavigationDestination(
+              icon: Icon(Icons.access_time_outlined), label: 'Түүх'),
           NavigationDestination(icon: Icon(Icons.phone), label: 'Дуудлага'),
           NavigationDestination(
               icon: Icon(Icons.message_outlined), label: 'Мессеж'),
-          NavigationDestination(
-              icon: Icon(Icons.supervised_user_circle_outlined),
-              label: 'Хүмүүс')
         ],
       ),
     );
