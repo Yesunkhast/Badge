@@ -1,3 +1,4 @@
+import 'package:demo/widgets/ChannelList.dart';
 import 'package:flutter/material.dart';
 
 class Message extends StatelessWidget {
@@ -15,7 +16,6 @@ class Message extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            // icon: Icon(Icons.person_add_alt_1_rounded),
             icon: const Icon(Icons.add_comment_rounded),
           ),
         ],
@@ -61,11 +61,12 @@ class Message extends StatelessWidget {
               ),
             ),
           ),
-          // ignore: avoid_unnecessary_containers
-          Container(
-            // child: Image.asset('assets/nothing/massage.jpg'),
-            child: Image.asset('assets/nothing/message.jpg'),
-          )
+          Expanded(
+            // Use Expanded to avoid overflow
+            child: Container(
+              child: ListTileApp(),
+            ),
+          ),
         ],
       ),
     );
